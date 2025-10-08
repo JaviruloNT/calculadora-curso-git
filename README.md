@@ -74,5 +74,6 @@ calculadora-curso-git/
 | `raizCuadrada(num)` | ✅ Implementada | Calcula la raíz cuadrada |
 
 ## 👤 Alumnos
-HEGEMANN, Albaro
-VASQUEZ, JUAN PABLO
+- HEGEMANN, Albaro
+- VASQUEZ, Juan Pablo
+- 
