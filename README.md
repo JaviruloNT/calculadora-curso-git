@@ -75,3 +75,4 @@ calculadora-curso-git/
 
 ## 👤 Alumnos
 HEGEMANN, Albaro
+VASQUEZ, JUAN PABLO
