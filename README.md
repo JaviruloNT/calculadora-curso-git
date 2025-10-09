@@ -76,4 +76,4 @@ calculadora-curso-git/
 ## 👤 Alumnos
 - HEGEMANN, Albaro
 - VASQUEZ, Juan Pablo
-- 
+- RÜHLE, Andrés G.
