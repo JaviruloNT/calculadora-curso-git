@@ -4,15 +4,15 @@ class Calculadora {
   }
 
   restar(a, b) {
-    // TODO: Implementar resta
+    return a - b;
   }
 
   multiplicar(a, b) {
-    return a *b;
+    return a * b;
   }
 
   dividir(a, b) {
-    return a/ b;
+    return a / b;
   }
 
   potencia(base, exponente) {
