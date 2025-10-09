@@ -67,7 +67,7 @@ calculadora-curso-git/
 | Función | Estado | Descripción |
 |---------|--------|-------------|
 | `sumar(a, b)` | ✅ Implementada | Suma dos números |
-| `restar(a, b)` | ⏳ Pendiente | Resta dos números |
+| `restar(a, b)` | ✅ Implementada  | Resta dos números |
 | `multiplicar(a, b)` | ✅ Implementada | Multiplica dos números |
 | `dividir(a, b)` | ✅ Implementada | Divide dos números |
 | `potencia(base, exp)` | ✅ Implementada | Eleva un número a una potencia |
