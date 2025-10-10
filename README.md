@@ -1,6 +1,11 @@
 # calculadora-curso-git
 Una calculadora simple de consola desarrollada en JavaScript con cliente interactivo de uso para los trabajos prácticos del Curso de git.
 
+## 👤 Alumnos
+- HEGEMANN, Albaro
+- VASQUEZ, Juan Pablo
+- RÜHLE, Andrés G.
+
 ## 📋 Características
 
 - ✅ Operaciones matemáticas básicas
@@ -72,8 +77,3 @@ calculadora-curso-git/
 | `dividir(a, b)` | ✅ Implementada | Divide dos números |
 | `potencia(base, exp)` | ✅ Implementada | Eleva un número a una potencia |
 | `raizCuadrada(num)` | ✅ Implementada | Calcula la raíz cuadrada |
-
-## 👤 Alumnos
-- HEGEMANN, Albaro
-- VASQUEZ, Juan Pablo
-- RÜHLE, Andrés G.
