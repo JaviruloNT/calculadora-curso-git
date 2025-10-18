@@ -4,7 +4,7 @@ Una calculadora simple de consola desarrollada en JavaScript con cliente interac
 ## 👤 Alumnos
 - HEGEMANN, Albaro
 - VASQUEZ, Juan Pablo
-- RÜHLE, Andrés G.
+- RÜHLE, Andrés
 
 ## 📋 Características
 
