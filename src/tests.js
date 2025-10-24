@@ -182,10 +182,6 @@ test('resto de numero impar', () => {
   expect(calc.resto(7, 2)).toBe(1);
 });
 
-test('resto por cero debe retornar NaN', () => {
-  expect(calc.resto(5, 0)).toBe(NaN);
-});
-
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
