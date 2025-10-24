@@ -15,6 +15,18 @@ class Calculadora {
     return a / b;
   }
 
+  promedio(arrayNumeros){
+    if(!Array.isArray(arrayNumeros) || arrayNumeros.length === 0){
+      return undefined;
+    }
+    
+    let suma =0;
+    for (let i = 0; i <arrayNumeros.length; i++ ){
+      suma += arrayNumeros[i];
+    }
+    return suma/arrayNumeros.length;
+  }
+
   potencia(base, exponente) {
     return base ** exponente;
   }
@@ -52,6 +64,7 @@ console.log('- calc.sumar(a, b)');
 console.log('- calc.restar(a, b)');
 console.log('- calc.multiplicar(a, b)');
 console.log('- calc.dividir(a, b)');
+console.log('- calc.promedio(arrayNumeros)');
 console.log('- calc.potencia(base, exponente)');
 console.log('- calc.raizCuadrada(numero)');
 console.log('- calc.resto(a, b)');
