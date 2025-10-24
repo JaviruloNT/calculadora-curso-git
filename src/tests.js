@@ -201,7 +201,7 @@ test('log10 de 0.1 igual a -1', () => {
 });
 
 test('log10 de -10 igual a NaN', () => {
-  expect(calc.log(-10)).toBe(NaN);
+  expect(calc.log(-10)).toBeNaN();
 });
 
 // Test de Logaritmo Natural 
@@ -215,7 +215,7 @@ test('ln de e igual a 1', () => {
 });
 
 test('ln de -1 igual a NaN', () => {
-  expect(calc.ln(-1)).toBe(NaN);
+  expect(calc.ln(-1)).toBeNaN();
 });
 
 // Resumen
