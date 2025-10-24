@@ -26,6 +26,14 @@ class Calculadora {
   resto(a, b) {
     return a % b;
   }
+
+  ln(numero) {
+    return Math.ln(numero);
+  }
+
+  log(numero) {
+    return Math.log10(numero);
+  }
 }
 
 // Exportar para usar en tests
