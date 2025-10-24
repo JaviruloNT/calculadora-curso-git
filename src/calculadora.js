@@ -28,7 +28,7 @@ class Calculadora {
   }
 
   ln(numero) {
-    return Math.ln(numero);
+    return Math.log(numero);
   }
 
   log(numero) {
