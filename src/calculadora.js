@@ -22,6 +22,10 @@ class Calculadora {
   raizCuadrada(numero) {
     return Math.sqrt(numero);
   }
+
+  resto(a, b) {
+    return a % b;
+  }
 }
 
 // Exportar para usar en tests
