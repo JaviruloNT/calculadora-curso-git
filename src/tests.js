@@ -218,6 +218,20 @@ test('ln de -1 igual a NaN', () => {
   expect(calc.ln(-1)).toBeNaN();
 });
 
+//Testeo de promedio en base a un array
+console.log('\nTests de Promedio:');
+test('Promedio del array [2, 4, 6, 8]', () => {
+  expect(calc.promedio([2, 4, 6, 8])).toBe(5);
+});
+
+test('Promedio del array vacio', () => {
+  expect(calc.promedio([])).toBeUndefined();
+});
+
+test('Promedio del array [8]', () => {
+  expect(calc.promedio([8])).toBe(8);
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
