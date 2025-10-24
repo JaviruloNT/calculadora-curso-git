@@ -19,6 +19,8 @@ function mostrarMenu() {
   console.log('5. Potencia');
   console.log('6. Raíz Cuadrada');
   console.log('7. Resto');
+  console.log('8. Logaritmo Natural');
+  console.log('9. Logaritmo Base 10');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -126,7 +128,29 @@ async function ejecutarOpcion(opcion) {
         'resto'
       );
       break;
-    
+
+    case '8':
+      const numLn = await pedirNumero('Ingrese el numero: ');
+      const resultadoLn = calc.ln(numLn);
+
+      if (resultadoLn === undefined) {
+        console.log('\n⚠️  La función logaritmo natural aún no está implementada');
+      } else {
+        console.log(`\n✓ Resultado: ln(${numLn}) = ${resultadoLn}`);
+      }
+    break;
+
+    case '9':
+      const numLog = await pedirNumero('Ingrese el numero: ');
+      const resultadoLog = calc.log(numLog);
+
+      if (resultadoLog === undefined) {
+        console.log('\n⚠️  La función logaritmo base 10 aún no está implementada');
+      } else {
+        console.log(`\n✓ Resultado: log10(${numLn}) = ${resultadoLn}`);
+      }
+    break;
+
     case '0':
       console.log('\n¡Hasta luego! 👋');
       rl.close();

@@ -26,6 +26,14 @@ class Calculadora {
   resto(a, b) {
     return a % b;
   }
+
+  ln(numero) {
+    return Math.log(numero);
+  }
+
+  log(numero) {
+    return Math.log10(numero);
+  }
 }
 
 // Exportar para usar en tests
@@ -47,3 +55,5 @@ console.log('- calc.dividir(a, b)');
 console.log('- calc.potencia(base, exponente)');
 console.log('- calc.raizCuadrada(numero)');
 console.log('- calc.resto(a, b)');
+console.log('- calc.ln(numero)');
+console.log('- calc.log(numero)');

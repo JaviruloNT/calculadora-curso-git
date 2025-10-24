@@ -182,6 +182,42 @@ test('resto de numero impar', () => {
   expect(calc.resto(7, 2)).toBe(1);
 });
 
+// Test de Logaritmo Base 10 
+console.log('\nTests de logaritmo base 10:');
+test('log10 de 1 igual a 0', () => {
+  expect(calc.log(1)).toBe(0);
+});
+
+test('log10 de 10 igual a 1', () => {
+  expect(calc.log(10)).toBe(1);
+});
+
+test('log10 de 1000 igual a 3', () => {
+  expect(calc.log(1000)).toBe(3);
+});
+
+test('log10 de 0.1 igual a -1', () => {
+  expect(calc.log(0.1)).toBe(-1);
+});
+
+test('log10 de -10 igual a NaN', () => {
+  expect(calc.log(-10)).toBeNaN();
+});
+
+// Test de Logaritmo Natural 
+console.log('\nTests de logaritmo natural:');
+test('ln de 1 igual a 0', () => {
+  expect(calc.ln(1)).toBe(0);
+});
+
+test('ln de e igual a 1', () => {
+  expect(calc.ln(Math.E)).toBe(1);
+});
+
+test('ln de -1 igual a NaN', () => {
+  expect(calc.ln(-1)).toBeNaN();
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
