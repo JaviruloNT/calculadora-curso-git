@@ -22,6 +22,7 @@ function mostrarMenu() {
   console.log('8. Logaritmo Natural');
   console.log('9. Logaritmo Base 10');
   console.log('10. Promedio de array');
+  console.log('11. Maximo de array');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -153,14 +154,26 @@ async function ejecutarOpcion(opcion) {
     break;
 
     case '10':
-      const longArray = await pedirNumero('Ingresa la longitud del Array: ');
-      let arrayNumeros = [];
-      for (let i = 0; i< longArray; i ++){
+      const longPromedio = await pedirNumero('Ingresa la longitud del Array: ');
+      let promedioArray = [];
+      for (let i = 0; i< longPromedio; i ++){
         const numero = await pedirNumero('Ingresar numero: ');
-        arrayNumeros.push(numero);
+        promedioArray.push(numero);
       }
-      const resultadoPromedio = calc.promedio(arrayNumeros);
-      console.log(`\n✓ Resultado: Promedio(${arrayNumeros}) = ${resultadoPromedio}`);
+      const resultadoPromedio = calc.promedio(promedioArray);
+      console.log(`\n✓ Resultado: Promedio(${promedioArray}) = ${resultadoPromedio}`);
+      break;
+      
+
+      case '11':
+      const longMaximo = await pedirNumero('Ingresa la longitud del Array: ');
+      let maximoArray = [];
+      for (let i = 0; i< longMaximo; i ++){
+        const numero = await pedirNumero('Ingresar numero: ');
+        maximoArray.push(numero);
+      }
+      const resultadoMaximo = calc.promedio(maximoArray);
+      console.log(`\n✓ Resultado: Maximo(${maximoArray}) = ${resultadoMaximo}`);
       break;
       
     case '0':
