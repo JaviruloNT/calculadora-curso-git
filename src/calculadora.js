@@ -46,6 +46,21 @@ class Calculadora {
   log(numero) {
     return Math.log10(numero);
   }
+
+  maximo(arrayNumeros){
+    if(!Array.isArray(arrayNumeros) || arrayNumeros.length === 0){
+      return undefined;
+    }
+    
+    let numMax = arrayNumeros[0];
+    for (let i =1; i< arrayNumeros.length; i++){
+      if (numMax < arrayNumeros[i]){
+        numMax = arrayNumeros[i];
+      }
+    }
+
+    return numMax;
+  }
 }
 
 // Exportar para usar en tests
@@ -70,3 +85,4 @@ console.log('- calc.raizCuadrada(numero)');
 console.log('- calc.resto(a, b)');
 console.log('- calc.ln(numero)');
 console.log('- calc.log(numero)');
+console.log('- calc.maximo(arrayNumeros)');
