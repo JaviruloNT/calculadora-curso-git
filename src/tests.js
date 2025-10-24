@@ -232,6 +232,20 @@ test('Promedio del array [8]', () => {
   expect(calc.promedio([8])).toBe(8);
 });
 
+//testeo de encontrar el maximo
+console.log('\nTest de encontrar el maximo');
+test('Maximo del array [2, 4, 6, 8]', () => {
+  expect(calc.maximo([2, 4, 6, 8])).toBe(8);
+});
+
+test('Maximo del array vacio', () => {
+  expect(calc.maximo([])).toBeUndefined();
+});
+
+test('Maximo del array [8]', () => {
+  expect(calc.maximo([8])).toBe(8);
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
