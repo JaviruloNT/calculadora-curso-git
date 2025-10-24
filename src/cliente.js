@@ -124,7 +124,8 @@ async function ejecutarOpcion(opcion) {
       await operacionDosNumeros(
         (a, b) => calc.resto(a, b),
         'resto'
-      )
+      );
+      break;
     
     case '0':
       console.log('\n¡Hasta luego! 👋');
