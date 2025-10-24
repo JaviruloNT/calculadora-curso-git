@@ -65,7 +65,8 @@ function getSimboloOperacion(nombre) {
     'resta': '-',
     'multiplicación': '×',
     'división': '÷',
-    'potencia': '^'
+    'potencia': '^',
+    'resto': '%'
   };
   return simbolos[nombre] || '';
 }
@@ -118,6 +119,12 @@ async function ejecutarOpcion(opcion) {
         'raíz cuadrada'
       );
       break;
+
+    case '7':
+      await operacionDosNumeros(
+        (a, b) => calc.resto(a, b),
+        'resto'
+      )
     
     case '0':
       console.log('\n¡Hasta luego! 👋');
