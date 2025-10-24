@@ -21,6 +21,7 @@ function mostrarMenu() {
   console.log('7. Resto');
   console.log('8. Logaritmo Natural');
   console.log('9. Logaritmo Base 10');
+  console.log('10. Promedio de array');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -151,6 +152,17 @@ async function ejecutarOpcion(opcion) {
       }
     break;
 
+    case '10':
+      const longArray = await pedirNumero('Ingresa la longitud del Array: ');
+      let arrayNumeros = [];
+      for (let i = 0; i< longArray; i ++){
+        const numero = await pedirNumero('Ingresar numero: ');
+        arrayNumeros.push(numero);
+      }
+      const resultadoPromedio = calc.promedio(arrayNumeros);
+      console.log(`\n✓ Resultado: Promedio(${arrayNumeros}) = ${resultadoPromedio}`);
+      break;
+      
     case '0':
       console.log('\n¡Hasta luego! 👋');
       rl.close();
