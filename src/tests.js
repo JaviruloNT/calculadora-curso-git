@@ -182,6 +182,20 @@ test('resto de numero impar', () => {
   expect(calc.resto(7, 2)).toBe(1);
 });
 
+// Test de Logaritmo Natural 
+console.log('\nTests de logaritmo natural:');
+test('ln de 1 igual a 0', () => {
+  expect(calc.ln(1)).toBe(0);
+});
+
+test('ln de e igual a 1', () => {
+  expect(calc.ln(Math.E)).toBe(0);
+});
+
+test('ln de -1 igual a NaN', () => {
+  expect(calc.ln(-1)).toBe(NaN);
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
