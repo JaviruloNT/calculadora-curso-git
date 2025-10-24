@@ -168,6 +168,24 @@ test('raíz cuadrada de número negativo debe retornar NaN', () => {
   expect(calc.raizCuadrada(-4)).toBeNaN();
 });
 
+// Test de Resto
+console.log('\nTests de resto:');
+test('resto de dos números positivos', () => {
+  expect(calc.resto(10, 2)).toBe(0);
+});
+
+test('resto de números negativos', () => {
+  expect(calc.resto(-10, -2)).toBe(0);
+});
+
+test('resto de numero impar', () => {
+  expect(calc.resto(7, 2)).toBe(1);
+});
+
+test('resto por cero debe retornar NaN', () => {
+  expect(calc.resto(5, 0)).toBe(NaN);
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);
