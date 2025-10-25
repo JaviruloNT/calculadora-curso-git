@@ -246,6 +246,34 @@ test('Maximo del array [8]', () => {
   expect(calc.maximo([8])).toBe(8);
 });
 
+//testeo de porcentaje
+console.log('\nTest de porcentaje:');
+test('Porcentaje de 50 sobre 200', () => {
+  expect(calc.porcentaje(50, 200)).toBe(25);
+});
+
+test('Porcentaje de 0 sobre 100', () => {
+  expect(calc.porcentaje(0, 100)).toBe(0);
+});
+
+test('Porcentaje de 75 sobre 300', () => {
+  expect(calc.porcentaje(75, 300)).toBe(25);
+});
+
+//testeo de factorial
+console.log('\nTest de factorial:');
+test('Factorial de 5', () => {
+  expect(calc.factorial(5)).toBe(120);
+});
+
+test('Factorial de 0', () => {
+  expect(calc.factorial(0)).toBe(1);
+});
+
+test('Factorial de número negativo', () => {
+  expect(calc.factorial(-3)).toBeUndefined();
+});
+
 // Resumen
 console.log('\n=== Resumen ===');
 console.log(`Tests pasados: ${testsPasados}`);

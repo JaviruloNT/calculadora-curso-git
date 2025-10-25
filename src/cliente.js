@@ -23,6 +23,8 @@ function mostrarMenu() {
   console.log('9. Logaritmo Base 10');
   console.log('10. Promedio de array');
   console.log('11. Maximo de array');
+  console.log('12. Porcentaje');
+  console.log('13. Factorial');
   console.log('0. Salir');
   console.log('=================================');
 }
@@ -165,15 +167,33 @@ async function ejecutarOpcion(opcion) {
       break;
       
 
-      case '11':
-      const longMaximo = await pedirNumero('Ingresa la longitud del Array: ');
-      let maximoArray = [];
-      for (let i = 0; i< longMaximo; i ++){
-        const numero = await pedirNumero('Ingresar numero: ');
-        maximoArray.push(numero);
+    case '11':
+    const longMaximo = await pedirNumero('Ingresa la longitud del Array: ');
+    let maximoArray = [];
+    for (let i = 0; i< longMaximo; i ++){
+      const numero = await pedirNumero('Ingresar numero: ');
+      maximoArray.push(numero);
+    }
+    const resultadoMaximo = calc.maximo(maximoArray);
+    console.log(`\n✓ Resultado: Maximo(${maximoArray}) = ${resultadoMaximo}`);
+    break;
+
+    case '12':
+      await operacionDosNumeros(
+        (a, b) => calc.porcentaje(a, b),
+        'porcentaje'
+      );
+      break;
+
+    case '13':
+      const numeroFactorial = await pedirNumero('Ingrese un número entero no negativo: ');
+      const resultadoFactorial = calc.factorial(numeroFactorial);
+      
+      if (resultadoFactorial === undefined) {
+        console.log('\n⚠️  La función factorial aún no está implementada o el número es negativo');
+      } else {
+        console.log(`\n✓ Resultado: ${numeroFactorial}! = ${resultadoFactorial}`);
       }
-      const resultadoMaximo = calc.promedio(maximoArray);
-      console.log(`\n✓ Resultado: Maximo(${maximoArray}) = ${resultadoMaximo}`);
       break;
       
     case '0':

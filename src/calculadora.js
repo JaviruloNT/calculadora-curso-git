@@ -61,7 +61,22 @@ class Calculadora {
 
     return numMax;
   }
+
+  porcentaje(a, b) {
+    return (a / b) * 100;
+  }
+
+  factorial(n) {
+    if (n < 0) return undefined;
+    if (n === 0 || n === 1) return 1;
+    let resultado = 1;
+    for (let i = 2; i <= n; i++) {
+      resultado *= i;
+    }
+    return resultado;
+  }
 }
+
 
 // Exportar para usar en tests
 if (typeof module !== 'undefined' && module.exports) {
@@ -86,3 +101,5 @@ console.log('- calc.resto(a, b)');
 console.log('- calc.ln(numero)');
 console.log('- calc.log(numero)');
 console.log('- calc.maximo(arrayNumeros)');
+console.log('- calc.porcentaje(a, b)');
+console.log('- calc.factorial(n)');
