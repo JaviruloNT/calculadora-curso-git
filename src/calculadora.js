@@ -1,18 +1,22 @@
 class Calculadora {
   sumar(a, b) {
-    return a + b;
+    this.guardarEnMemoria(a + b);
+    return this.usarMemoria();
   }
 
   restar(a, b) {
-    return a - b;
+    this.guardarEnMemoria(a - b);
+    return this.usarMemoria();
   }
 
   multiplicar(a, b) {
-    return a * b;
+    this.guardarEnMemoria(a * b);
+    return this.usarMemoria();
   }
 
   dividir(a, b) {
-    return a / b;
+    this.guardarEnMemoria(a / b);
+    return this.usarMemoria();
   }
 
   promedio(arrayNumeros){
@@ -24,27 +28,33 @@ class Calculadora {
     for (let i = 0; i <arrayNumeros.length; i++ ){
       suma += arrayNumeros[i];
     }
-    return suma/arrayNumeros.length;
+    this.guardarEnMemoria(suma / arrayNumeros.length);
+    return this.usarMemoria();
   }
 
   potencia(base, exponente) {
-    return base ** exponente;
+    this.guardarEnMemoria(base ** exponente);
+    return this.usarMemoria();
   }
 
   raizCuadrada(numero) {
-    return Math.sqrt(numero);
+    this.guardarEnMemoria(Math.sqrt(numero));
+    return this.usarMemoria();
   }
 
   resto(a, b) {
-    return a % b;
+    this.guardarEnMemoria(a % b);
+    return this.usarMemoria();
   }
 
   ln(numero) {
-    return Math.log(numero);
+    this.guardarEnMemoria(Math.log(numero));
+    return this.usarMemoria();
   }
 
   log(numero) {
-    return Math.log10(numero);
+    this.guardarEnMemoria(Math.log10(numero));
+    return this.usarMemoria();
   }
 
   maximo(arrayNumeros){
@@ -58,12 +68,14 @@ class Calculadora {
         numMax = arrayNumeros[i];
       }
     }
-
+    this.guardarEnMemoria(numMax);
     return numMax;
   }
 
   porcentaje(a, b) {
-    return (a / b) * 100;
+    if (b === 0) return undefined;
+    this.guardarEnMemoria((a / b) * 100);
+    return this.usarMemoria();
   }
 
   factorial(n) {
@@ -73,8 +85,21 @@ class Calculadora {
     for (let i = 2; i <= n; i++) {
       resultado *= i;
     }
+    this.guardarEnMemoria(resultado);
     return resultado;
   }
+
+  // Añadir memoria: guardar resultado de la última operación y usarlo en la siguiente
+  memoria = null;
+
+  guardarEnMemoria(valor) {
+    this.memoria = valor;
+  }
+
+  usarMemoria() {
+    return this.memoria;
+  }
+
 }
 
 

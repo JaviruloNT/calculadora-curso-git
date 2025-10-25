@@ -32,15 +32,30 @@ function mostrarMenu() {
 function pedirNumero(mensaje) {
   return new Promise((resolve) => {
     rl.question(mensaje, (respuesta) => {
-      const numero = parseFloat(respuesta);
-      resolve(numero);
+      // Si la respuesta está vacía, usar el valor de memoria
+      if (respuesta.trim() === '') {
+        const valorMemoria = calc.usarMemoria();
+        if (valorMemoria !== null) {
+          console.log(`Usando valor de memoria: ${valorMemoria}`);
+          resolve(valorMemoria);
+        } else {
+          console.log('No hay ningún valor en memoria. Ingrese un número: ');
+          rl.question('', (nuevaRespuesta) => {
+            const numero = parseFloat(nuevaRespuesta);
+            resolve(numero);
+          });
+        }
+      } else {
+        const numero = parseFloat(respuesta);
+        resolve(numero);
+      }
     });
   });
 }
 
 async function operacionDosNumeros(operacion, nombreOperacion) {
-  const num1 = await pedirNumero('Ingrese el primer número: ');
-  const num2 = await pedirNumero('Ingrese el segundo número: ');
+  const num1 = await pedirNumero('Ingrese el primer número o presione enter para usar el almacenado en memoria: ');
+  const num2 = await pedirNumero('Ingrese el segundo número o presione enter para usar el almacenado en memoria: ');
   
   const resultado = operacion(num1, num2);
   
@@ -52,7 +67,7 @@ async function operacionDosNumeros(operacion, nombreOperacion) {
 }
 
 async function operacionUnNumero(operacion, nombreOperacion) {
-  const num = await pedirNumero('Ingrese el número: ');
+  const num = await pedirNumero('Ingrese el número o presione enter para usar el almacenado en memoria: ');
   
   const resultado = operacion(num);
   
@@ -108,8 +123,8 @@ async function ejecutarOpcion(opcion) {
       break;
     
     case '5':
-      const base = await pedirNumero('Ingrese la base: ');
-      const exponente = await pedirNumero('Ingrese el exponente: ');
+      const base = await pedirNumero('Ingrese la base o presione enter para usar el almacenado en memoria: ');
+      const exponente = await pedirNumero('Ingrese el exponente o presione enter para usar el almacenado en memoria: ');
       const resultadoPot = calc.potencia(base, exponente);
       
       if (resultadoPot === undefined) {
@@ -134,7 +149,7 @@ async function ejecutarOpcion(opcion) {
       break;
 
     case '8':
-      const numLn = await pedirNumero('Ingrese el numero: ');
+      const numLn = await pedirNumero('Ingrese el número o presione enter para usar el almacenado en memoria: ');
       const resultadoLn = calc.ln(numLn);
 
       if (resultadoLn === undefined) {
@@ -145,21 +160,21 @@ async function ejecutarOpcion(opcion) {
     break;
 
     case '9':
-      const numLog = await pedirNumero('Ingrese el numero: ');
+      const numLog = await pedirNumero('Ingrese el número o presione enter para usar el almacenado en memoria: ');
       const resultadoLog = calc.log(numLog);
 
       if (resultadoLog === undefined) {
         console.log('\n⚠️  La función logaritmo base 10 aún no está implementada');
       } else {
-        console.log(`\n✓ Resultado: log10(${numLn}) = ${resultadoLn}`);
+        console.log(`\n✓ Resultado: log10(${numLog}) = ${resultadoLog}`);
       }
     break;
 
     case '10':
-      const longPromedio = await pedirNumero('Ingresa la longitud del Array: ');
+      const longPromedio = await pedirNumero('Ingresa la longitud del Array o presione enter para usar el almacenado en memoria: ');
       let promedioArray = [];
       for (let i = 0; i< longPromedio; i ++){
-        const numero = await pedirNumero('Ingresar numero: ');
+        const numero = await pedirNumero('Ingresar número o presione enter para usar el almacenado en memoria: ');
         promedioArray.push(numero);
       }
       const resultadoPromedio = calc.promedio(promedioArray);
@@ -168,10 +183,10 @@ async function ejecutarOpcion(opcion) {
       
 
     case '11':
-    const longMaximo = await pedirNumero('Ingresa la longitud del Array: ');
+    const longMaximo = await pedirNumero('Ingresa la longitud del Array o presione enter para usar el almacenado en memoria: ');
     let maximoArray = [];
     for (let i = 0; i< longMaximo; i ++){
-      const numero = await pedirNumero('Ingresar numero: ');
+      const numero = await pedirNumero('Ingresar número o presione enter para usar el almacenado en memoria: ');
       maximoArray.push(numero);
     }
     const resultadoMaximo = calc.maximo(maximoArray);
@@ -186,7 +201,7 @@ async function ejecutarOpcion(opcion) {
       break;
 
     case '13':
-      const numeroFactorial = await pedirNumero('Ingrese un número entero no negativo: ');
+      const numeroFactorial = await pedirNumero('Ingrese un número entero no negativo o presione enter para usar el almacenado en memoria: ');
       const resultadoFactorial = calc.factorial(numeroFactorial);
       
       if (resultadoFactorial === undefined) {
